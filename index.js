@@ -247,12 +247,13 @@ function tallyUpDonations(/* CODE HERE */) {
 */
 function counterMaker() {
   // BROKEN CODE STARTS
-  const count = 0;
-  function counter() {
-    ++count
-  }
+  let count = 0;
+  const counter = function() {
+    return count++;
+  };
+  return counter;
   // BROKEN CODE ENDS
-}
+} 
 
 /**
  * ### Challenge `counterMakerWithLimit`
@@ -274,8 +275,16 @@ function counterMaker() {
  * counter() // should return 0
  * etc
 */
-function counterMakerWithLimit(/* CODE HERE */) {
-  /* CODE HERE */
+function counterMakerWithLimit(max) {
+  let count = 0;
+  const counter2 = function() {
+    if (count > max) {
+      count = 0;
+    } if (count <= max) {
+      return count++;
+    }
+  }
+  return counter2;
 }
 
 /////////////// END OF CHALLENGE ///////////////
