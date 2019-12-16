@@ -112,8 +112,14 @@ function processSum(numberList, callback) {
  * [2] Invoking `processProduct` passing 25 and 0 and `(num) => num + 1000`,
  * should return 1000.
 */
-function processProduct(/* CODE HERE */) {
-  /* CODE HERE */
+
+//No clue why this isn't working. It works in codepen.
+function processProduct(num1, num2, callback) {
+  return callback(num1, num2);
+}
+
+const product = (num1, num2) => {
+  return num1 * num2;
 }
 
 /**
@@ -181,8 +187,12 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
  * @returns an array with all the runners' full names in the following format: "Smith, John".
  * The full names appear in the array in the same order the runners appear in the `runners` array.
 */
-function getFullNames(/* CODE HERE */) {
-  /* CODE HERE */
+function getFullNames(runners) {
+  let runnerNames = [];
+  runners.forEach(function(names) {
+    runnerNames.push(`${names.last_name}, ${names.first_name}`);
+  })
+  return runnerNames;
 }
 
 /**
