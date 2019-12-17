@@ -115,12 +115,13 @@ function processSum(numberList, callback) {
 
 //No clue why this isn't working. It works in codepen.
 function processProduct(num1, num2, callback) {
-  return callback(num1, num2);
+  return callback(num1 * num2);
 }
 
-const product = (num1, num2) => {
-  return num1 * num2;
-}
+// const product = (num1, num2) => {
+//   return num1 * num2;
+// };
+
 
 /**
  * ### Challenge `processContains`
@@ -142,10 +143,22 @@ const product = (num1, num2) => {
  * "lady gaga" and `['foo', 'bar']` and `(bool) => bool ? 'nice!' : 'sad'`,
  * should return "sad".
 */
-function processContains(/* CODE HERE */) {
-  /* CODE HERE */
-}
+function processContains(item, list, callback) {
+  const array = list.filter(filtered => filtered === item);
 
+  if (array.length > 0){
+    return true;
+  } else {
+    return false;
+  }
+//   return callback() {
+//     if (item === list[item].length) {
+//       return true;
+//     } else {
+//       return false;
+//     }
+//   };
+}
 /**
  * ### Challenge `processDuplicateFree`
  * THIS IS A STRETCH PROBLEM! ATTEMPT ONLY AFTER COMPLETING ALL NON-STRETCH CHALLENGES!
