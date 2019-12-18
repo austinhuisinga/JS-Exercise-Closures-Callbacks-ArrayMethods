@@ -143,6 +143,7 @@ function processProduct(num1, num2, callback) {
  * "lady gaga" and `['foo', 'bar']` and `(bool) => bool ? 'nice!' : 'sad'`,
  * should return "sad".
 */
+// I can also use IndexOf, which should be a lot simpler.
 function processContains(item, list, callback) {
   const array = list.filter(filtered => filtered === item);
 
@@ -178,8 +179,10 @@ function processContains(item, list, callback) {
  * [2] Invoking `processDuplicateFree` passing `[1,1,2,2,3]` and `(arr) => arr.length`,
  * should return 3.
 */
-function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */) {
-  /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
+function processDuplicateFree(list, callback) {
+  return list.filter(function(value, index) {
+    return list.indexOf(value) == index;
+  });
 }
 
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
